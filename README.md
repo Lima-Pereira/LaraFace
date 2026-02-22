@@ -1,6 +1,6 @@
 # 🛡️ LaraFace - Sistema de Cadastro com Foto
 
-Este projeto é um **CRUD completo** desenvolvido em **Laravel** que permite o cadastro de pessoas com captura de imagem em tempo real diretamente pela webcam.
+Este projeto é um **CRUD em Laravel para gestão de pessoas, integrando captura de fotos via Webcam e processamento de imagens para perfil..
 
 ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white) ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
