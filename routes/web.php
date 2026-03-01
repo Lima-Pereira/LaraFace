@@ -13,12 +13,19 @@ Route::post('/cadastro', [SiteController::class, 'store'])->name('pessoa.store')
 
 // 3. Rota do Dashboard do Breeze
 Route::get('/dashboard', function () {
-
-    //Buscar todas as pessoas no Banco de dados
     $pessoas = \App\Models\Pessoa::all();
 
-    // Manda a Variável $pessoas para a tela do dashboard
-    return view('dashboard', compact('pessoas'));
+    // 1. Cálculos de Estatísticas
+    $total = $pessoas->count();
+    $mediaIdade = $total > 0 ? round($pessoas->avg('idade'), 1) : 0;
+    $membrosRJ = $pessoas->where('uf', 'RJ')->count();
+
+    // 2. Preparar dados para o gráfico (Cidades)
+    $cidades = $pessoas->groupBy('cidade')->map->count();
+    $labels = $cidades->keys();
+    $valores = $cidades->values();
+
+    return view('dashboard', compact('pessoas', 'total', 'mediaIdade', 'membrosRJ', 'labels', 'valores'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // 4. Área Protegida por Login Só se você estiver logado poderá acessar
