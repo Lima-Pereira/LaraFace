@@ -30,10 +30,13 @@ Route::middleware('auth')->group(function () {
     // Rota para abrir a tela de edição
     Route::get('/projetos/{pessoa}/editar', [SiteController::class, 'edit'])->name('pessoa.edit');
     
-    // Rota para salvar as alterações PUT ou PATCH para atualização)
+    // Rota para salvar as alterações
     Route::put('/projetos/{pessoa}', [SiteController::class, 'update'])->name('pessoa.update');
-    // A sua rota exclusiva para DELETAR o projeto
-    Route::delete('/projetos/{pessoa}', [SiteController::class, 'destroy'])->name('pessoa.deletar');
+    
+    // CORREÇÃO: Nome alterado para bater com o Dashboard
+    Route::delete('/projetos/{pessoa}', [SiteController::class, 'destroy'])->name('pessoa.destroy');
+    
+    // Rota do Relatório PDF
+    Route::get('/relatorio-pdf', [SiteController::class, 'gerarRelatorio'])->name('pessoa.relatorio');
 });
-
 require __DIR__.'/auth.php';

@@ -35,8 +35,5 @@
         </main>
     </div>
 </body>
-<footer class="text-center mt-20 py-6 text-gray-500 text-sm">
-    &copy; 2026 - Henrique Lima da Silva Pereira | Junior Developer
-</footer>
 
 </html>

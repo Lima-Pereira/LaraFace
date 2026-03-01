@@ -8,7 +8,7 @@ use Carbon\Carbon;
 class Pessoa extends Model
 {
     // 'image_path' permitir o salvamento da imagem
-    protected $fillable = ['name', 'birth', 'idade', 'gender', 'image_path'];
+    protected $fillable = ['name', 'birth', 'idade', 'gender', 'image_path', 'cpf', 'cep', 'rua','numero', 'bairro', 'cidade', 'uf'];
 
     // 2. Adicione 'age' para que ela apareça sempre que você carregar o modelo
     protected $appends = ['image', 'age'];
