@@ -1,4 +1,4 @@
-# 🛡️ LaraFace - Sistema de Cadastro com Foto
+# 🛡️ LaraFace - Sistema de Cadastro
 
 Este projeto é um **CRUD** em Laravel para gestão de pessoas, integrando captura de fotos via Webcam e processamento de imagens para perfil..
 
