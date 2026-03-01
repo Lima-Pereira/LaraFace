@@ -28,7 +28,7 @@ class SiteController extends Controller
 
     public function store(Request $request)
     {
-        // 1. Validação Completa (Igual ao Update)
+        // 1. Validação Completa 
         $data = $request->validate([
             'name'   => ['required', 'string', 'min:3', 'max:255', 'regex:/^[a-zA-ZÀ-ÿ\s]+$/u'],
             'birth'  => 'required|date|before:today|after:1900-01-01',
@@ -36,7 +36,7 @@ class SiteController extends Controller
             'cpf'    => ['required', 'string', new CpfValido()],
             'cep'    => 'nullable|string|max:9',
             'rua'    => 'nullable|string|max:255',
-            'numero' => 'required|string|max:10', // Obrigatório para o endereço ficar completo
+            'numero' => 'required|string|max:10', 
             'bairro' => 'nullable|string|max:255',
             'cidade' => 'nullable|string|max:255',
             'uf'     => 'nullable|string|max:2',
@@ -58,7 +58,7 @@ class SiteController extends Controller
         // 3. Cálculo da idade
         $data['idade'] = Carbon::parse($request->birth)->age;
 
-        // 4. Salva no banco
+        // 4. Salvar no banco
         Pessoa::create($data);
 
         return redirect('/')->with('success', 'Cadastro realizado com sucesso!');
@@ -120,7 +120,7 @@ class SiteController extends Controller
     {
         $pessoas = Pessoa::all(); //
 
-        // Carrega a view que criaremos abaixo e passa os dados
+        // Carrega a view e passa os dados
         $pdf = Pdf::loadView('relatorio_pdf', compact('pessoas'));
 
         // Faz o download automático com o nome do arquivo datado

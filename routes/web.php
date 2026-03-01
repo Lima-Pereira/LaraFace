@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     // Rota para salvar as alterações
     Route::put('/projetos/{pessoa}', [SiteController::class, 'update'])->name('pessoa.update');
     
-    // CORREÇÃO: Nome alterado para bater com o Dashboard
+
     Route::delete('/projetos/{pessoa}', [SiteController::class, 'destroy'])->name('pessoa.destroy');
     
     // Rota do Relatório PDF

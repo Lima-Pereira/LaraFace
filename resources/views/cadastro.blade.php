@@ -62,17 +62,6 @@
             <button type="button" id="btn-reset" onclick="resetCamera()" style="display:none; background-color: #718096;">Tirar Outra</button>
         </div>
 
-        @if ($errors->any())
-            <div style="background-color: #fee2e2; border: 1px solid #ef4444; color: #b91c1c; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
-                <strong>Opa! Tem algo errado:</strong>
-                <ul style="margin-top: 5px;">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
         <form action="{{ route('pessoa.store') }}" method="POST">
             @csrf
             <input type="hidden" name="base64_image" id="base64_image">
